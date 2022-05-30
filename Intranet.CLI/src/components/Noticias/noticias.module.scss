@@ -1,0 +1,56 @@
+.container {
+
+    h3{
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        color:#AABBCC;
+        border-bottom: 1px solid #AABBCC;
+    }
+}
+
+.itens {
+
+    //border-top: 1px solid #AABBCC;
+    //border-right: 1px solid #DDDDDD;
+}
+
+.artigo {
+    
+    margin: 20px;
+    border-radius: 10px 10px;
+    box-shadow: 5px 5px 20px lightgrey;
+    padding: 20px;
+
+    img{
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    h4{
+        margin-bottom: 20px;
+    }    
+
+}
+
+.lead {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-align: justify;
+    font-size: 0.95em;
+    line-height: 1.5;
+    //text-indent: 2em;
+}
+
+.leiaMais{
+
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    
+    span {font-size: 0.8em;}
+    a {font-weight: bold;}
+}
+

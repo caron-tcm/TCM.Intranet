@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intranet.API</name>
+    </assembly>
+    <members>
+        <member name="M:Intranet.API.Controllers.AniversarioController.GetAniversarios">
+            <summary>
+            Retorna uma lista com os aniversariantes do dia
+            </summary>
+        </member>
+        <member name="M:Intranet.API.Controllers.ComunicadoController.GetComunicados(System.Int32,System.Int32)">
+            <summary>
+            Retorna uma lista de Comunicados
+            </summary>
+            <param name="idInicial"> O **id** do primeiro Comunicado a ser retornado **(default="" -> retorna os mais recentes)**</param>  
+            <param name="quantidade"> A **quantidade** de Comunicados a recuperar **(default=10)**</param>  
+        </member>
+        <member name="M:Intranet.API.Controllers.ComunicadoController.GetComunicado(System.Int32)">
+            <summary>
+            Busca um Comunicado
+            </summary>
+            <param name="id">O **id** do Comunicado a ser retornado</param>  
+        </member>
+    </members>
+</doc>

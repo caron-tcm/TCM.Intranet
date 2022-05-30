@@ -1,0 +1,48 @@
+.linkAcesso {
+    color: #337ab7;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.breadcrumb {
+    background-color: #EEEEEE;
+    padding: 8px 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    list-style: none;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    li {
+        display:inline;
+        text-overflow: ellipsis;
+        //white-space: nowrap;
+        //max-width: 90%;
+        overflow: hidden;
+      }
+    
+    li + li:before {
+        padding: 0 5px;
+        color: #ccc;
+        content: "/\00a0";
+    }
+
+    span {
+        color: #777777;
+        background-color: transparent;
+        font-size: 14px;
+    }
+
+    span.titulo {
+        background-color: rgb(51, 122, 183);
+        color: rgb(255, 255, 255);
+        padding: 0 5px 2px;
+        border-radius: 4px;
+        font-size: 20px;
+    }   
+
+}

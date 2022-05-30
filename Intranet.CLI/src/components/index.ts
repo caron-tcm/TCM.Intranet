@@ -1,0 +1,13 @@
+export { default as Aniversarios } from './Aniversarios';
+export { default as AoVivo } from './AoVivo';
+export { default as Breadcrumb } from './Breadcrumb';
+export { default as Carrossel } from './Carrossel';
+export { default as Comunicados } from './Comunicados';
+export { default as Destaques } from './Destaques';
+export { default as Header } from './Header';
+export { default as MenuColapsavel } from './MenuColapsavel';
+export { default as MenuSobrepor } from './MenuSobrepor';
+export { default as ModalContainer } from './ModalContainer';
+export { default as Noticias } from './Noticias';
+export { default as Relatorio } from './Relatorio';
+export { default as SignInButton } from './SignInButton';

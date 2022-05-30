@@ -1,0 +1,53 @@
+import ICentroCusto from "./ICentroCusto";
+import ILotacao from "./ILotacao";
+
+export default interface IServidor {
+    Ativo: boolean;
+    Error: string;
+    Alterado: boolean;
+    Chapa: string;
+    IdRH: number;
+    Nome: string;
+    NomeReduzido: string;
+    Cargo: string;
+    CentroCusto: ICentroCusto;
+    CPF: string;
+    Sexo: string;
+    Empresa: string;
+    DataNascimento: Date;
+    DataAdmissao: Date;
+    DataDemissao: Date;
+    Lotacao: ILotacao;
+    Apelido: string;
+    Ramal: string;
+    EstadoCivil: string;
+    TipoSanguineo: string;
+    Peso: string;
+    Altura: string;
+    Endereco: string;
+    Endereco_Numero: string;
+    Endereco_Complemento: string;
+    Endereco_Bairro: string;
+    Endereco_Cidade: string;
+    Endereco_Estado: string;
+    Endereco_CEP: string;
+    RG: string;
+    RG_Estado: string;
+    RG_OrgaoEmissor: string;
+    RG_Emissao: string;
+    DDD: string;
+    Telefone: string;
+    Celular: string;
+    Email: string;
+    CidadeNascimento: string;
+    EstadoNascimento: string;
+    NomeMae: string;
+    QTC: string;
+    FG_CODIGO: string;
+    FG_DESCRICAO: string;
+    PIS: string;
+    Instrucao: string;
+    RacaCor: string;
+    Foto: string;
+    ChapaNome: string
+}

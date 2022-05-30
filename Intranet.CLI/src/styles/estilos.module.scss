@@ -1,0 +1,41 @@
+.contentContainer {
+    
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    .callToAction{
+        max-width: 700px;
+    }
+ 
+}
+
+.noticiasContainer {
+
+    width: 60%;
+    border-right: 1px solid #DDDDDD;
+}
+
+.comunicadosContainer {
+ 
+    width: 40%;
+
+}
+
+.mensagemErroContainer {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.mensagemErro {
+    color:darkred;
+    padding: 0px 10px 10px;
+    border-right: rgb(129, 79, 79) solid 1px;
+    border-bottom: rgb(129, 79, 79) solid 1px;
+    border-bottom-right-radius: 10px;
+}
+

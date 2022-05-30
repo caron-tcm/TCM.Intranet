@@ -1,0 +1,44 @@
+import IDocumento from "./IDocumento";
+import ILink from "./ILink";
+import ITag from "./ITag";
+import ITipoRelatorio from "./ITipoRelatorio";
+
+export default interface IRelatorio {
+    cdRelatorio: number;
+    nmRelatorio: string;
+    dsRelatorio: string;
+    dtDataPublicacao: Date;
+    dsResumo: string;
+    flPublico: boolean;
+    cdTipoRelatorio: number;
+    cdSubTipoRelatorio: number;
+    flProtegido: boolean;
+    dtDataAtualizacao: Date;
+    dsLegendaImagem: string;
+    dsResumoParaEmail: string;
+    nmResponsavel: string;
+    txtEmailMonitoramentoDownloadDocumentos: string;
+    txtEmailModeradoresFaleConosco: string;
+    flMostrarFormularioFaleConosco: boolean;
+    flMostrarFaqFaleConosco: boolean;
+    dtReferencia: Date;
+    flInternet: boolean;
+    flDestaque: boolean;
+    flEsconderTitulo: boolean;
+    idReferenciaExterna: number;
+    cdRelatorioDocumentoImagemCapa: number;
+    flAlinhamentoCapaDireita: boolean;
+    flMostrarCapaNoResumo: boolean;
+    flMostrarTituloDentroCapa: boolean;
+    flRetirarContornoImagemCapa: boolean;
+    nmCodigoCursoSemelhante: number;
+    flPermitirInscreverFamiliares: boolean;
+    flPermitirMenuCustomizado: boolean;
+    flCarousel: boolean;
+    dtCriacao: Date;
+    dtAlteracao: Date;
+    tipoRelatorio: ITipoRelatorio;
+    documentos: IDocumento[];
+    tags: ITag[];
+    links: ILink[];
+  }
