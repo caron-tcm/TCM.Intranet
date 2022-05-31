@@ -11,7 +11,7 @@ namespace Intranet.API.Models
     {
         public SubTipoRelatorio() {}
         public int cdSubTipoRelatorio  { get; set; }
-        public char SiglaTipoRelatorio  { get; set; }
+        public string SiglaTipoRelatorio  { get; set; }
         public string nmTipoRelatorio  { get; set; }
         public string dsTipoRelatorio  { get; set; }
         public int? cdOrdem  { get; set; }
@@ -20,13 +20,3 @@ namespace Intranet.API.Models
 
     }
 }
-
-/*
-cdSubTipoRelatorio: number;
-SiglaTipoRelatorio: string;
-nmTipoRelatorio?: string;
-dsTipoRelatorio?: string;
-cdOrdem?: number;
-cdTipoRelatorio: number;
-txtHtmlContent?: string;
-*/

@@ -138,5 +138,4 @@ C:\_TCM_\Sistemas\Desenvolvimento\2019\TCM.Intranet\Intranet.API\obj\Debug\net5.
 C:\_TCM_\Sistemas\Desenvolvimento\2019\TCM.Intranet\Intranet.API\obj\Debug\net5.0\Intranet.API.csproj.AssemblyReference.cache
 C:\_TCM_\Sistemas\Desenvolvimento\2019\TCM.Intranet\Intranet.API\bin\Debug\net5.0\Intranet.API.xml
 C:\_TCM_\Sistemas\Desenvolvimento\2019\TCM.Intranet\Intranet.API\obj\Debug\net5.0\Intranet.API.xml
-C:\_TCM_\Sistemas\Desenvolvimento\2019\TCM.Intranet\Intranet.API\bin\Debug\net5.0\Intranet.API.StaticWebAssets.xml
 C:\_TCM_\Sistemas\Desenvolvimento\2019\TCM.Intranet\Intranet.API\obj\Debug\net5.0\refint\Intranet.API.dll

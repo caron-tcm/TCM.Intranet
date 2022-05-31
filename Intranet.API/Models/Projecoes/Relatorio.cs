@@ -55,19 +55,22 @@ namespace Intranet.API.Models
         public IEnumerable<Relatorio_Documento> Documentos { get; set;} 
 
         [NotMapped]
-        public IEnumerable<Tag> Tags {get; set;}
+        public IEnumerable<Relatorio_Tag> Tags {get; set;}
 
         [NotMapped]
-        public IEnumerable<Tema> Temas {get; set;}
+        public IEnumerable<Relatorio_Tema> Temas {get; set;}
 
         [NotMapped]
         public IEnumerable<Relatorio_Link> Links {get; set;}
 
         [NotMapped]
-        public IEnumerable<Relatorio_Processo> Processos {get; set;}
+        public IEnumerable<Processo> Processos {get; set;}
 
         [NotMapped]
         public IEnumerable<Relatorio_Item> Itens {get; set;}
+
+        [NotMapped]
+        public IEnumerable<Relatorio_FaleConosco> FaleConosco {get; set;}
 
     }
 }

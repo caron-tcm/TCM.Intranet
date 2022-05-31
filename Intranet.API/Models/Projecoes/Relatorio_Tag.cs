@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore;
 namespace Intranet.API.Models
 {
     [Keyless]
-    public partial class Tag
+    public partial class Relatorio_Tag
     {
-        public Tag() { }
+        public Relatorio_Tag() { }
         public int cdTag  { get; set; }
         public string nmTag  { get; set; }
         public string dsTag  { get; set; }

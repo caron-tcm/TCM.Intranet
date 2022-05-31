@@ -39,7 +39,7 @@ namespace Intranet.API.Models
         public virtual DbSet<Relatorio_Documento> RelatorioDocumentos { get; set; }
         public virtual DbSet<Relatorio_FaleConosco> RelatorioFalemConosco { get; set; }
         public virtual DbSet<Relatorio_Link> RelatorioLinks { get; set; }
-        public virtual DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<Relatorio_Tag> Tags { get; set; }
         public virtual DbSet<TipoRelatorio> TiposRelatorio { get; set; }
         public virtual DbSet<SubTipoRelatorio> SubTiposRelatorio { get; set; }
         public virtual DbSet<UsuarioAD> UsuariosAD { get; set; }
@@ -81,8 +81,8 @@ namespace Intranet.API.Models
             modelBuilder.Entity<Relatorio_Link>(entity => { entity.HasNoKey(); });
             modelBuilder.Entity<Relatorio_Processo>(entity => { entity.HasNoKey(); });
             modelBuilder.Entity<Relatorio_SubItem>(entity => { entity.HasNoKey(); });
-            modelBuilder.Entity<Tag>(entity => { entity.HasNoKey(); });
-            modelBuilder.Entity<Tema>(entity => { entity.HasNoKey(); });
+            modelBuilder.Entity<Relatorio_Tag>(entity => { entity.HasNoKey(); });
+            modelBuilder.Entity<Relatorio_Tema>(entity => { entity.HasNoKey(); });
             modelBuilder.Entity<TipoRelatorio>(entity => { entity.HasNoKey(); });
             modelBuilder.Entity<SubTipoRelatorio>(entity => { entity.HasNoKey(); });
             modelBuilder.Entity<UsuarioAD>(entity => { entity.HasNoKey(); });

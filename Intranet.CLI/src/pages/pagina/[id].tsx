@@ -17,7 +17,7 @@ export default function Pagina(props) {
   const crumbs = [{href:"/",title:"Home"}]
 
   if (relatorio) crumbs.push({href:"/Pagina/" + relatorio.cdRelatorio, title: relatorio.dsRelatorio})
-  
+
   return (
     <>
       <Head>

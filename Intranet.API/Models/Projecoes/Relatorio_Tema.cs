@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore;
 namespace Intranet.API.Models
 {
     [Keyless]
-    public partial class Tema
+    public partial class Relatorio_Tema
     {
-        public Tema() { }
+        public Relatorio_Tema() { }
         public int cdTema  { get; set; }
         public string nmTema  { get; set; }
         public string dsTema  { get; set; }
@@ -22,13 +22,3 @@ namespace Intranet.API.Models
 
     }
 }
-/*
-cdTema: number;
-nmTema?: string;
-dsTema?: string;
-nmArquivo?: string;
-flPublico: boolean;
-IdFile: string;
-Imagem?: Uint8Array[];
-dsCorTema?: string;
-*/

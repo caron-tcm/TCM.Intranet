@@ -19,15 +19,7 @@ namespace Intranet.API.Models
         public int Order  { get; set; }
 
         [NotMapped]
-        public IEnumerable<Relatorio_SubItem> Itens {get; set;}
+        public IEnumerable<Relatorio_SubItem> SubItens {get; set;}
 
     }
 }
-/*
-cdRelatorioItem: number;
-cdRelatorio: number;
-nmRelatorioItem: string;
-dsRelatorioItem?: string;
-txtRelatorioItem?: string;
-Order: number;
-*/

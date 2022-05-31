@@ -19,10 +19,3 @@ namespace Intranet.API.Models
 
     }
 }
-/*
-cdRelatorioSubItem: number;
-cdRelatorioItem?: number;
-nmRelatorioSubItem?: string;
-dsRelatorioSubItem?: string;
-Order?: number;
-*/

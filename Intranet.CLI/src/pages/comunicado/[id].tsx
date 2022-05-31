@@ -69,8 +69,6 @@ export async function getServerSideProps({ params }) {
 
   const noticia = await resNoticia.json();
 
-  //console.log(id);
-
   return {
     props: { noticia },
   };

@@ -1,6 +1,11 @@
 import IDocumento from "./IDocumento";
+import IFaleConosco from "./IFaleConosco";
+import IItem from "./IItem";
 import ILink from "./ILink";
+import IProcesso from "./IProcesso";
+import ISubTipoRelatorio from "./ISubTipoRelatorio";
 import ITag from "./ITag";
+import ITema from "./ITema";
 import ITipoRelatorio from "./ITipoRelatorio";
 
 export default interface IRelatorio {
@@ -38,7 +43,12 @@ export default interface IRelatorio {
     dtCriacao: Date;
     dtAlteracao: Date;
     tipoRelatorio: ITipoRelatorio;
+    subTipoRelatorio: ISubTipoRelatorio;
     documentos: IDocumento[];
     tags: ITag[];
+    temas: ITema[];
     links: ILink[];
+    processos: IProcesso[];
+    itens: IItem[];
+    faleConosco: IFaleConosco[];
   }

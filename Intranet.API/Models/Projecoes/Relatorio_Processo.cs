@@ -17,7 +17,3 @@ namespace Intranet.API.Models
 
     }
 }
-/*
-cdRelatorio: number;
-nuTC: string;
-*/

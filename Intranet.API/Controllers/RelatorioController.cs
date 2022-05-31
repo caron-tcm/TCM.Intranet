@@ -44,16 +44,30 @@ namespace Intranet.API.Controllers
 
             Result = (await _connection.QueryAsync<Relatorio>(sql)).FirstOrDefault();
 
-            if (!(Result is null)) {
+            if (Result != null) {
 
                 // busca o tipo do relatório
 
                 sql = @$"
                     select *
                     from tTipoRelatorio
-                    where cdTipoRelatorio = {id}";
+                    where cdTipoRelatorio = {Result.cdTipoRelatorio}";
 
                 var tipo = (await _connection.QueryAsync<TipoRelatorio>(sql)).FirstOrDefault();
+
+                // busca o subtipo do relatório
+
+                SubTipoRelatorio subTipo = null;
+
+                if (Result.cdSubTipoRelatorio != null) {
+
+                    sql = @$"
+                        select *
+                        from tSubTipoRelatorio
+                        where cdSubTipoRelatorio = {Result.cdSubTipoRelatorio}";
+
+                    subTipo = (await _connection.QueryAsync<SubTipoRelatorio>(sql)).FirstOrDefault();
+                }
 
                 // busca os documentos do relatório
 
@@ -86,13 +100,33 @@ namespace Intranet.API.Controllers
                         tag.nmArquivo,
                         tag.flPublico,
                         tag.IdFile,
-                        tag.dsCorTag
+                        tag.dsCorTag,
+                        DATALENGTH(tag.Imagem) as ImagemSize
                     from tTagRelatorio as tre
                     inner join tTag as tag
                         on tag.cdTag = tre.cdTag
                     where tre.cdRelatorio = {id}";
 
-                var tags = (await _connection.QueryAsync<Tag>(sql));
+                var tags = (await _connection.QueryAsync<Relatorio_Tag>(sql));
+
+
+                // busca os temas do relatorio
+
+               sql = @$"
+                    select tem.cdTema,
+                        tem.nmTema,
+                        tem.dsTema,
+                        tem.nmArquivo,
+                        tem.flPublico,
+                        tem.IdFile,
+                        tem.Imagem,
+                        tem.dsCorTema
+                    from TTemaRelatorio as ter
+                    join TTema as tem
+                        on tem.cdTema = ter.cdTema
+                    where ter.cdRelatorio = {id}";
+
+                var temas = (await _connection.QueryAsync<Relatorio_Tema>(sql));                
 
                 // busca os links do relatório
 
@@ -132,7 +166,7 @@ namespace Intranet.API.Controllers
                             on pro.nuTC = rel.nuTC
                         where rel.cdRelatorio = {id}";
 
-                var processos = (await _connection.QueryAsync<Relatorio_Processo>(sql));
+                var processos = (await _connection.QueryAsync<Processo>(sql));
 
                 // busca os itens e subitens do relatório
 
@@ -153,51 +187,42 @@ namespace Intranet.API.Controllers
                            on rsi.cdRelatorioItem = rit.cdRelatorioItem
                      where cdRelatorio = {id}";
 
-                //var itens = (await _connection.QueryAsync<Relatorio_Item>(sql));
-
                 AutoMapper.Configuration.AddIdentifier(typeof(Relatorio_Item), "cdRelatorioItem");
                 AutoMapper.Configuration.AddIdentifier(typeof(Relatorio_SubItem), "cdRelatorioSubItem");
 
-                var dados = _connection.Query<dynamic>(sql: sql);
+                var dados = (await _connection.QueryAsync<dynamic>(sql: sql));
 
                 var itens = (AutoMapper.MapDynamic<Relatorio_Item>(dados) as IEnumerable<Relatorio_Item>).ToList();
 
-/*
-                // testando com o dapper tb
-
-                Relatorio_Item _item = null;
-                //Relatorio_SubItem _subItem = null;
-                var _itens = new List<Relatorio_Item>();
+                // busca os "Fale Conosco" do relatório
 
                 sql = @$"
-                    select rit.*,
-                           rsi.*
-                      from TRelatorioItem rit
-                      left join TRelatorioSubItem rsi
-                           on rsi.cdRelatorioItem = rit.cdRelatorioItem
-                     where cdRelatorio = {id}";
+                    select cdRelatorioFaleConosco,
+                        cdRelatorio,
+                        IdAspNetUsers,
+                        nmAssunto,
+                        txtMensagem,
+                        dtRegistro,
+                        flRespondido,
+                        flPublico,
+                        dtRespo,
+                        txtPerguntaPublica
+                    from TRelatorioFaleConosco
+                    where cdRelatorio = {id}";
 
-                    dados = _connection.Query<Relatorio_Item, Relatorio_SubItem, Relatorio_Item>(
-                    sql: sql,
-                    map: (item, subItem) =>
-                    {
-                        if (_item is null || _item.cdRelatorio != item.cdRelatorio) _item = item;
-                        if ( !(subItem is null) ) _item.Itens.Append(subItem);
-
-                        return item;
-                    },
-                    splitOn: "cdRelatorioItem,cdRelatorioSubItem");
-
-*/
+                var faleconosco = (await _connection.QueryAsync<Relatorio_FaleConosco>(sql));
 
                 // agrega os dados extras ao relatório
 
                 Result.TipoRelatorio = tipo;
+                Result.SubTipoRelatorio = subTipo;
                 Result.Documentos = documentos;
                 Result.Tags = tags;
+                Result.Temas = temas;
                 Result.Links = links;
                 Result.Processos = processos;
                 Result.Itens = itens;
+                Result.FaleConosco = faleconosco;
 
             }
 
