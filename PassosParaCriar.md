@@ -25,13 +25,13 @@ dotnet new sln
 [dotnet new -l] (lista os tipos de projeto disponíveis para criação)
 ```
 
-para cada projeto, incluí-lo na solution:
+para cada projeto (depois de criados - vide abaixo), incluí-lo na solution:
 ```
 dotnet sln NomeDaSolution.sln add PastaDoProjeto/NomeDoProjeto.csproj
 ```
 
 ---
-## CRIAÇÃO DA API
+## CRIAÇÃO DA API (.NET CORE / EF / DAPPER)
 
 ```
 cd Intranet.API
@@ -125,7 +125,7 @@ dotnet dev-certs https --trust
 ```
 
 ---
-## CRIAÇÃO DO CLIENT (CORS)
+## CRIAÇÃO DO CLIENT (REACT / NEXTJS / TYPESCRIPT)
 
 ```
 cd Intranet.Cli
