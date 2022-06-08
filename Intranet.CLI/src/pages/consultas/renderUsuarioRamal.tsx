@@ -1,5 +1,6 @@
 import estilos from './consultas.module.scss';
 import IServidor from "@interfaces/IServidor";
+import ICentroCusto from '@interfaces/ICentroCusto';
 
 export default function renderUsuarioRamal(usuario: IServidor) : JSX.Element {
 
@@ -13,7 +14,7 @@ export default function renderUsuarioRamal(usuario: IServidor) : JSX.Element {
         <form method="post" id="fAtualizaOutroRamalUpdate">
     
             <input id="cpf_hidden" name="cpf_hidden" type="hidden" value={usuario.CPF} />
-            <input id="dtNasc_hidden" name="dia_hidden" type="hidden" value={usuario.DataNascimento.getDate()} />
+            <input id="dtNasc_hidden" name="dia_hidden" type="hidden" value={usuario.DataNascimento?.getDate()} />
     
             <div>
                 <label htmlFor="lbl_nome" >Nome:</label>
@@ -22,7 +23,7 @@ export default function renderUsuarioRamal(usuario: IServidor) : JSX.Element {
     
             <div>
                 <label htmlFor="lbl_lotacao" >Lotação:</label>
-                <p id="lbl_Lotacao">{usuario.CentroCusto.mNome}</p>
+                <p id="lbl_Lotacao">{usuario.CentroCusto?.mNome}</p>
             </div>
     
             <div>

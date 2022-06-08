@@ -10,8 +10,11 @@ module.exports = {
       }
     ]
   },
-  
   images: {
     domains: ['localhost:5000'],
   },
+  // suporte para Docker (vide https://github.com/vercel/next.js/blob/canary/examples/with-docker/README.md)
+  experimental: {
+    outputStandalone: true,
+  },  
 }

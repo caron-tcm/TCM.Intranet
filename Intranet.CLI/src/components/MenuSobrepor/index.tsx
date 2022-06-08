@@ -45,7 +45,7 @@ function MontarLink(item:IMenuItem) {
 
     return (
       <Link key={item.cdMenuRodapeItem} href={url}>
-        <a target="_blank" rel="noopener noreferrer">{item.nmMenuRodapeItem}</a>
+        <a /* target="_blank" */ rel="noopener noreferrer">{item.nmMenuRodapeItem}</a>
       </Link>
     )
 

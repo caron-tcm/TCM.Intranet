@@ -14,7 +14,7 @@ export default function renderPesquisaRamal(ramais: IServidor[], nomePesquisado:
 
         if (data.value) {
             return data.value == "1349" // estava no código original, eu mantive :))
-                ? <a href="https://wa.me/551150801349" title={`Clique para mandar mensagem por whastapp para ${data.data["Nome"]}`} target="_blank"><FaWhatsapp size={15} />{data.value}</a>
+                ? <a href="https://wa.me/551150801349" title={`Clique para mandar mensagem por whastapp para ${data.data["Nome"]}`} target="_blank" rel="noreferrer"><FaWhatsapp size={15} />{data.value}</a>
                 : <a href={`tel:+55 11 5080-0${data.value}`} title={`Clique para ligar para ${data.data["Nome"]}`}><FaPhoneAlt size={10} />{data.value}</a>
         } else {
             return ""

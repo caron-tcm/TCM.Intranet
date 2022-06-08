@@ -1,0 +1,18 @@
+#origem: https://www.youtube.com/watch?v=aNh8iShFXto
+
+version: '3'
+
+services:
+  app:
+    image: intranet.cli-dev
+    build: .
+    ports:
+      - 3000:3100
+    volumes:
+      - .public:/app/public
+      - .components:/app/src/components
+      - .context:/app/src/context
+      - .interfaces:/app/src/interfaces
+      - .pages:/app/src/pages
+      - .styles:/app/src/styles
+      - .util:/app/src/util
